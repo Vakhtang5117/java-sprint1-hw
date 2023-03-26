@@ -20,13 +20,13 @@ public class StepTracker {
         int step;
         System.out.println("Введите номер месяца");
         month = scanner.nextInt();
-        if (month < 1 && month > 12) {
+        if (month < 1 || month > 12) {
             System.out.println("Ошибка");
             return;
         }
         System.out.println("Введите день от 1 до 30 (включительно)");
         day = scanner.nextInt();
-        if (day < 1 && day > 30) {
+        if (day < 1 || day > 30) {
             System.out.println("Ошибка");
             return;
         }
@@ -55,7 +55,7 @@ public class StepTracker {
         System.out.println("Введите число месяца");
 
         int month = scanner.nextInt();
-        if (month < 1 && month > 12) {
+        if (month < 1 || month > 12) {
             System.out.println("Ошибка");
             return;
         }
