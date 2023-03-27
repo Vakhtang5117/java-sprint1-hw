@@ -1,4 +1,4 @@
-package main.java.org.example;
+package org.example;
 
 public class MonthData {
     int days[] = new int[30];
