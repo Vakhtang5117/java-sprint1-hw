@@ -28,19 +28,20 @@ public class MonthData {
     }
 
     int bestSeries(int goalByStepsPerDay) {
-        int currentSeries = 1;
-        int finalSeries = 1;
-        for (int i = 1; i < days.length; i++) {
-            if (days[i] >= days[i - 1] && days[i] >= goalByStepsPerDay) {
-                currentSeries++;
-            } else {
-                currentSeries = 1;
-            }if(currentSeries > finalSeries){
-                finalSeries = currentSeries;
+        int currentSeries = 0;
+        int finalSeries = 0;
+        for (int day : days) {
+            if (goalByStepsPerDay <= day) {
+                currentSeries += 1;
             }
-
+            else {
+                if (currentSeries > finalSeries) {
+                    finalSeries = currentSeries;
+                }
+                currentSeries = 0;
+            }
         }
-        return finalSeries;
+        return Math.max(currentSeries, finalSeries);
     }
 
 
